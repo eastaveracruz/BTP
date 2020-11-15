@@ -1,5 +1,3 @@
-package main.java;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -25,7 +23,7 @@ public class BTP implements Serializable {
             btp.objectName = reverse(path.getFileName().toString().getBytes());
             btp.object = reverse(Files.readAllBytes(path));
 
-            if (!Files.exists(Paths.get("src/main/resources/objects/"))){
+            if (!Files.exists(Paths.get("src/main/resources/objects/"))) {
                 Files.createDirectory(Paths.get("src/main/resources/objects/"));
             }
 
@@ -56,7 +54,7 @@ public class BTP implements Serializable {
         }
     }
 
-    private static byte[] reverse(byte[] b){
+    private static byte[] reverse(byte[] b) {
         byte[] result = new byte[b.length];
         for (int i = 0, j = b.length - 1; i < b.length; i++, j--) {
             result[i] = b[j];
